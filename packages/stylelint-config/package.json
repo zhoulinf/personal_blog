@@ -1,5 +1,5 @@
 {
-  "name": "@person_blog/eslint-config",
+  "name": "@person_blog/stylelint-config",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -8,8 +8,5 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "eslint": "8"
-  }
+  "description": ""
 }
