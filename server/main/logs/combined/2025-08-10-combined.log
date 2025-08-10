@@ -1,0 +1,10 @@
+{"context":"RoutesResolver","level":"info","message":"UserController {/user}:","timestamp":"2025-08-10T09:28:11.998Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/user/add, POST} route","timestamp":"2025-08-10T09:28:12.002Z"}
+{"context":"RoutesResolver","level":"info","message":"AuthController {/auth}:","timestamp":"2025-08-10T09:28:12.003Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/login, POST} route","timestamp":"2025-08-10T09:28:12.004Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/signup, POST} route","timestamp":"2025-08-10T09:28:12.005Z"}
+{"context":"RoutesResolver","level":"info","message":"RoleController {/role}:","timestamp":"2025-08-10T09:28:12.005Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/role/:roleId, GET} route","timestamp":"2025-08-10T09:28:12.006Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/role, GET} route","timestamp":"2025-08-10T09:28:12.007Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/role/:roleId, DELETE} route","timestamp":"2025-08-10T09:28:12.008Z"}
+{"context":"NestApplication","level":"info","message":"Nest application successfully started","timestamp":"2025-08-10T09:28:12.010Z"}

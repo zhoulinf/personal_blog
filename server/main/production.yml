@@ -1,0 +1,6 @@
+db:
+  host: '120.48.136.66'
+  port: 3306
+  username: 'root'
+  password: '1998ZLF0716boy'
+  database: 'db_gk'
