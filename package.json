@@ -10,9 +10,11 @@
     "dev:web": "turbo run dev --filter @person_blog/web"
   },
   "devDependencies": {
+    "husky": "^9.1.7",
     "prettier": "^3.6.2",
     "turbo": "^2.5.5",
-    "typescript": "5.8.3"
+    "typescript": "5.8.3",
+    "validate-commit-msg": "^2.14.0"
   },
   "packageManager": "pnpm@9.0.0",
   "engines": {
