@@ -1,23 +1,19 @@
 {
-  "name": "person-blog",
-  "private": true,
-  "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types",
-    "dev:web": "turbo run dev --filter @person_blog/web"
-  },
-  "devDependencies": {
-    "husky": "^9.1.7",
-    "prettier": "^3.6.2",
-    "turbo": "^2.5.5",
-    "typescript": "5.8.3",
-    "validate-commit-msg": "^2.14.0"
-  },
-  "packageManager": "pnpm@9.0.0",
-  "engines": {
-    "node": ">=18"
-  }
+  "registry-mirrors": [
+    "https://2d66rb7p.mirror.aliyuncs.com",
+    "https://docker-cf.registry.cyou",
+    "https://docker.jsdelivr.fyi",
+    "https://docker.rainbond.cc",
+    "https://docker.registry.cyou",
+    "https://dockertest.jsdelivr.fyi",
+    "https://mirror.aliyuncs.com",
+    "https://dockercf.jsdelivr.fyi",
+    "https://dockerproxy.com",
+    "https://docker.mirrors.ustc.edu.cn",
+    "https://mirror.baidubce.com",
+    "https://docker.m.daocloud.io",
+    "https://docker.nju.edu.cn",
+    "https://docker.mirrors.sjtug.sjtu.edu.cn",
+    "https://mirror.iscas.ac.cn"
+  ]
 }
