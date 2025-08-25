@@ -11,9 +11,6 @@ importers:
       husky:
         specifier: ^9.1.7
         version: 9.1.7
-      prettier:
-        specifier: ^3.6.2
-        version: 3.6.2
       turbo:
         specifier: ^2.5.5
         version: 2.5.6
