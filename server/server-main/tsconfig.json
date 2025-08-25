@@ -40,6 +40,7 @@
   "include": [
     "./src",
     "**/*.d.ts",
+    "test/**/*.ts",
     "./eslint.config.*",
     "src/logger/logger.config.ts"
   ],

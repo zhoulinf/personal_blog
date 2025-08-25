@@ -1,16 +1,17 @@
 import bcrypt from 'bcrypt';
 
-const hashPassword = async (password: string) => {
-  const saltRound = 10;
-
-  return bcrypt.hash(password, saltRound);
+const hashPassword = async (password: string): Promise<string> => {
+  const saltRounds = 10;
+  const hashed: string = await bcrypt.hash(password, saltRounds);
+  return hashed;
 };
 
-// 密码验证
-const validatePassword = (
+const validatePassword = async (
   plainPassword: string,
   hashedPassword: string,
 ): Promise<boolean> => {
-  return bcrypt.compare(plainPassword, hashedPassword);
+  const isValid: boolean = await bcrypt.compare(plainPassword, hashedPassword);
+  return isValid;
 };
+
 export {hashPassword, validatePassword};

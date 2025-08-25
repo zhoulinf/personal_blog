@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import {ArgumentsHost, Catch, ExceptionFilter, HttpException, HttpStatus, Inject, Injectable, LoggerService} from '@nestjs/common';
 import {Request, Response} from 'express';
 import {ResponseDto} from '../dto/response.dto';

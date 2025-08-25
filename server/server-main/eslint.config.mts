@@ -6,6 +6,7 @@ import {configs} from '@person_blog/eslint-config';
 const config: ReturnType<typeof tseslint.config> = tseslint.config(
   eslint.configs.recommended,
   ...tseslint.configs.recommendedTypeChecked,
+  ...configs.ts,
   {
     languageOptions: {
       globals: {
@@ -19,10 +20,10 @@ const config: ReturnType<typeof tseslint.config> = tseslint.config(
       },
     },
   },
-  ...configs.ts,
   {
     rules: {
       'no-unused-vars': 'off',
+      'no-undef': 'off',
     },
   },
 );

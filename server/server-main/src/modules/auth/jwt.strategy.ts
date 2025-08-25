@@ -18,8 +18,10 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     });
   }
 
-  validate(payload: any) {
-    console.log('进来了');
+  validate(payload: {
+    sub:string;
+    username:string;
+  }) {
     this.logger.log(`${JSON.stringify(payload)}`, JwtStrategy.name);
     if (!payload || !payload.sub || !payload.username) {
       throw new UnauthorizedException('Invalid token or token expired');
