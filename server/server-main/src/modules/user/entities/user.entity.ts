@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import {Entity, Column, PrimaryGeneratedColumn} from 'typeorm';
 
 @Entity('t_user')
 export class User {
@@ -18,7 +18,7 @@ export class User {
   mobile: string;
 
   @Column({
-    default: 0
+    default: 0,
   })
   status: number;
 

@@ -1,6 +1,6 @@
-import { CallHandler, ExecutionContext, Injectable, NestInterceptor } from "@nestjs/common";
-import { Observable, map } from "rxjs";
-import { ResponseDto } from "../dto/response.dto";
+import {CallHandler, ExecutionContext, Injectable, NestInterceptor} from '@nestjs/common';
+import {Observable, map} from 'rxjs';
+import {ResponseDto} from '../dto/response.dto';
 
 
 @Injectable()
@@ -10,10 +10,8 @@ export class ResponseInterceptor implements NestInterceptor {
       .handle()
       .pipe(
         map((data => {
-          return new ResponseDto(data, 'success', 200)
-        }))
-      )
+          return new ResponseDto(data, 'success', 200);
+        })),
+      );
   }
-
-
 }

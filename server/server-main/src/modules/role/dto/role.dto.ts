@@ -1,10 +1,10 @@
 
 
-import { PermissionDto } from "./permission.dto";
+import {PermissionDto} from './permission.dto';
 export class RoleDto {
-  roleId: number
+  roleId: number;
   roleName: string;
   roleDesc: string;
-  createAt: Date
-  permissions: PermissionDto[]
+  createAt: Date;
+  permissions: PermissionDto[];
 }

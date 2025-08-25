@@ -1,7 +1,7 @@
-import { ArgumentsHost, Catch, ExceptionFilter, HttpException, HttpStatus, Inject, Injectable, LoggerService } from "@nestjs/common";
-import { Request, Response } from "express";
-import { ResponseDto } from "../dto/response.dto";
-import { LOGGER_TOKEN } from "@src/logger/logger.module";
+import {ArgumentsHost, Catch, ExceptionFilter, HttpException, HttpStatus, Inject, Injectable, LoggerService} from '@nestjs/common';
+import {Request, Response} from 'express';
+import {ResponseDto} from '../dto/response.dto';
+import {LOGGER_TOKEN} from '@src/logger/logger.module';
 
 @Catch()
 @Injectable()
@@ -11,7 +11,7 @@ export class AllExceptionFilter implements ExceptionFilter {
 
     catch(exception: unknown, host: ArgumentsHost) {
         const ctx = host.switchToHttp();
-        const response = ctx.getResponse<Response>()
+        const response = ctx.getResponse<Response>();
         const request = ctx.getRequest<Request>();
 
         let statusCode = HttpStatus.INTERNAL_SERVER_ERROR;
@@ -24,7 +24,8 @@ export class AllExceptionFilter implements ExceptionFilter {
 
             if (typeof res === 'string') {
                 message = res;
-            } else if (typeof res === 'object' && res !== null) {
+            }
+ else if (typeof res === 'object' && res !== null) {
                 const r = res as any;
                 message = r.message || message;
                 contextClassName = r.context;
@@ -51,7 +52,7 @@ export class AllExceptionFilter implements ExceptionFilter {
 
 
         this.logger.error(JSON.stringify(logPayload), contextClassName);
-        response.status(statusCode).json(new ResponseDto(null, message, statusCode))
+        response.status(statusCode).json(new ResponseDto(null, message, statusCode));
     }
 
-} 
+}

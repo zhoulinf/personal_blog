@@ -14,7 +14,8 @@
     "test:e2e": "playwright test",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
-    "lint": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@person_blog/eslint-config": "workspace:^",

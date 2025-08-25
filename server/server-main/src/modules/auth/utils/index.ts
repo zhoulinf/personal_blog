@@ -13,4 +13,4 @@ const validatePassword = (
 ): Promise<boolean> => {
   return bcrypt.compare(plainPassword, hashedPassword);
 };
-export { hashPassword, validatePassword };
+export {hashPassword, validatePassword};

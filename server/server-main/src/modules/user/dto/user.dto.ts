@@ -1,5 +1,5 @@
-import { IsEmail, IsNotEmpty, IsString } from 'class-validator'
-import { Exclude, Transform } from 'class-transformer'
+import {IsEmail, IsNotEmpty, IsString} from 'class-validator';
+import {Exclude, Transform} from 'class-transformer';
 
 export class UserDto {
 
@@ -15,7 +15,7 @@ export class UserDto {
   email: string;
 
   @IsString()
-  @Transform(() => undefined, { toPlainOnly: true })
+  @Transform(() => undefined, {toPlainOnly: true})
   password: string;
 
   @IsNotEmpty()

@@ -1,6 +1,6 @@
-import { readFileSync, existsSync } from 'fs';
+import {readFileSync, existsSync} from 'fs';
 import * as yaml from 'js-yaml';
-import { join } from 'path';
+import {join} from 'path';
 
 const CONFIG_DIR = join(__dirname, '../../');
 
