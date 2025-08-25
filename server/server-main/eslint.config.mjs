@@ -12,6 +12,7 @@ export default tseslint.config(
   eslint.configs.recommended,
   ...tseslint.configs.recommendedTypeChecked,
   eslintPluginPrettierRecommended,
+  ...configs.base,
   {
     languageOptions: {
       globals: {
@@ -33,5 +34,5 @@ export default tseslint.config(
       '@typescript-eslint/no-unsafe-argument': 'warn'
     },
   },
-  ...configs.base,
+
 );
