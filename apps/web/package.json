@@ -12,6 +12,7 @@
   "dependencies": {
     "@nuxt/eslint": "1.8.0",
     "@nuxt/image": "1.11.0",
+    "@person_blog/eslint-config": "workspace:*",
     "@tailwindcss/vite": "^4.1.11",
     "eslint": "^9.0.0",
     "nuxt": "^4.0.3",
