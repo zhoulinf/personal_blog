@@ -2,7 +2,7 @@ import {readFileSync, existsSync} from 'fs';
 import * as yaml from 'js-yaml';
 import {join} from 'path';
 
-const CONFIG_DIR = join(__dirname, '../../');
+const CONFIG_DIR = join(__dirname, './');
 
 const env = process.env.NODE_ENV || 'development';
 const configPath = join(CONFIG_DIR, `${env}.yml`);
