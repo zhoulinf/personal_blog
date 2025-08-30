@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in & Sign up Form</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <div class="container">
+        <button>Neumorphism</button>
+        <div class="row">
+            <!-- Sign Up Form -->
+            <div class="col align-items-center flex-col sign-up">
+                <div class="form-wrapper align-items-center">
+                    <div class="form sign-up">
+                        <form id="a-form" class="form" method="" action="">
+                            <h2 class="form_title title">Create Account</h2>
+                            <input class="form__input" type="text" placeholder="Name">
+                            <input class="form__input" type="text" placeholder="Email">
+                            <input class="form__input" type="password" placeholder="Password">
+                            <button class="form__button button submit">SIGN UP</button>
+                        </form>
+
+                        <p class="align-center">or use your email for register</p>
+
+                        <div class="social-list align-center">
+                            <a href="#">
+                                <img
+                                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTYgMjU2Ij48cGF0aCBkPSJNMTI4IDBjNzAuNzQ3IDAgMTI4IDU3LjI1MyAxMjggMTI4cy01Ny4yNTMgMTI4LTEyOCAxMjhTMCAxOTguNzUzIDAgMTI4IDU3LjI1MyAwIDEyOCAweiIgZmlsbD0iIzQwODRjZCIvPjxwYXRoIGQ9Ik0xMTEuNCAyMDAuOGMwLTcuMi0uMi0xNi40LS4yLTI2LjUgMCAwLTguOCAwLTE4LjYgMGwtLjQgMjYuNWMtNC4yIDAtOC42LS4yLTEzLjItLjYtNC42LS40LTkuMi0xLjItMTMuNS0yLjQgLTYuNC0xLjgtMTIuNC00LjctMTcuMy04LjgtNS0zLjktOS4yLTkuMi0xMi0xNS4xLTIuOC02LTQuMS0xMi41LTQtMjAuOC0uMS05LjIuMS0xOS4yIDAtMjkuNi4xLTQuOCAxLjItMTAuMiAyLjgtMTUuMiAyLjUtNy4zIDguNC0xMy41IDE1LjItMTcuMiA2LjQtMy40IDE0LjItNS4yIDIyLjItNS40IDEwLjgtLjIgMjAuNiAxLjIgMjkuMyA2LjYgNC4yIDIuNyA4LjYgNi4zIDEyLjEgMTAuNyAxMC4yLTQuOSAyMS44LTcuMiAzMy44LTcuMy0uNiAyLjggMS40IDE4LjMtMTYuOCAzNS4xLTEuNyAxLjYtMy40IDMuMy01IDQuNyAyLjQgMCA1LS4yIDcuNy0uMiAxMy41IDAgMTIuNi4yIDI0LjcuMiAzNi44IDAgMTMuMiAyLjUgMjQuNyAzLjggMzAuNi0uMSAwLTYuMyAxLjktMTIuMyAzLjItNi41IDEuMi0xMyAxLjgtMTkuNCAxLjktOC40LjEtMTYuNy0uOC0yNC41LTMuNC03LjgtMi42LTE0LjUtNi45LTIwLjItMTIuNC0xLjQtMS40LTIuOC0yLjgtNC4yLTQuM2wtLjYgMjEuN3YtLjJjLTUuMy0uMy0xMC41LS44LTE1LjYtMS41eiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==" />
+                            </a>
+                            <a href="#">
+                                <img
+                                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTYgMjU2Ij48cGF0aCBkPSJNMTI4IDBDNTcuMjUzIDAgMCA1Ny4yNTMgMCAxMjhzNTcuMjUzIDEyOCAxMjggMTI4IDEyOC01Ny4yNTMgMTI4LTEyOFMyMDAuNzQ3IDAgMTI4IDB6IiBmaWxsPSIjMzc3N2I1Ii8+PHBhdGggZD0iTTk0IDE5Mi4yaDUyLjVWMTMyaC0xNy41di0xMi44aDE3LjV2LTE2LjRjMC0yNC4xIDE0LjEtMzcuMyAzNS4yLTM3LjMgMTAuMSAwIDE4LjggMS41IDIwLjMgMS43djIzLjNoLTE0Yy0xMSAwLTEzLjIgNS4yLTEzLjIgMTIuOXYxNi43aDI1LjlsLTMuMyAxMi44aC0yMi42djYwLjJ6IiBmaWxsPSIjZmZmIi8+PC9zdmc+" />
+                            </a>
+                            <a href="#">
+                                <img
+                                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTYgMjU2Ij48cGF0aCBkPSJNMTI4IDBjNzAuNzQ3IDAgMTI4IDU3LjI1MyAxMjggMTI4cy01Ny4yNTMgMTI4LTEyOCAxMjhTMCAxOTguNzUzIDAgMTI4IDU3LjI1MyAwIDEyOCAweiIgZmlsbD0iI2VlNDMzNiIvPjxwYXRoIGQ9Ik0xODAuMyA4Mi42Yy0xLjMuNS0xOS4xIDkuNC0yMC40IDEwLTExLjQtMTAuNy0yOC42LTEyLjQtNDEuNS00LjUtOC4zIDUuMi0xNC4yIDEzLjUtMTUuOCAyMy40LTEuMSA2LjgtLjcgMTEuOCAxLjMgMTYuOC02LjcgMC0xMi44LTIuMy0xOC41LTUuOSAwIDIuNi0uMSA1IDAgNy40IDEuOCAxOC4zIDEyLjkgMzAuOCAyOS42IDM0LjQtNi41IDQuMi0xMy43IDYuNi0yMS40IDYuNC00LjUgMC05LTEuMy0xMy0zLjEgNi41IDE5LjcgMjUuMSAzMi45IDQ2LjkgMzMuMy0xNy4zIDEzLjYtMzIuOCAxOC41LTUzLjIgMTguNS0zLjYgMC03LjItLjItMTAuOC0uNiAyMC4yIDEzIDE5LjkgMTkuNyAzNy45IDIxIDM0LjkgMi43IDYyLjQtMTMuMyA4Mi44LTQ2LjUgODIuOC0yOC41IDAtNTcuMy05LjEtNzMuNC0zMC42LTE1LjQtMjAuMi0yMi4xLTQ0LjgtMjAuNC03MS43IDEuMi0yMi42IDEwLjQtNDMuNSA4LjYtNDcuNSAyMi43IDE0IDE2LjUgMTAuOSAzOS42IDIwLjIgMjAuNy0xOS40IDM3LjktMzguOSAxNC40LTY4LjIgMy42LTQuOCA3LjYtOC43IDEzLjMtMTEuOCAxOS41LTEwLjQgMzkuNi0xMS44IDU5LjUtMy42IDIwLjUgOC4xIDM3LjUgMjIuMiA1MS40eiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==" />
+                            </a>
+                            <a href="#">
+                                <img
+                                    src="data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDBhOGVkIiB2aWV3Qm94PSIwIDAgMjQ0IDI0NCIgd2lkdGg9IjQ4cHgiIGhlaWdodD0iNDhweCIgdmlld0JveD0iMCAwIDI0NCAyNDQiPjxwYXRoIGQ9Ik0xMjAgMTkuNmM2Ni4yIDAgMTA0LjQgNDAuNiAxMDQuNCA5My40IDAgNTAuMy00My4yIDExMS02MS4zIDEyNi44LTkuMSA3LjgtMjEuMyAxMy44LTMxLjggMTMuOC0xMC41IDAtMTMuOS0yLjYtMjMuMS0yLjYtOS4yIDAtMTQuNiAyLjktMjMuMyAyLjktOC43IDAtMTcuOS01LjUtMjQuNi0xMS45LTQwLjItMzYuOC02Mi4yLTkwLTYyLjItMTM2LjMgMC01Mi44IDM4LjItOTMuNCAxMDQtOTMuNHpNOTguMyA5NC4yYzMuMy0yLjEgOC42LTQuOCAxMi45LTQuOSA0LjQgMCAxMi43IDAgMTYuNiAwIDUuNCAwIDcuMi0uMSAxMi44IDIgNC42IDIuMiAxMS44IDguNCAxMS44IDE1LjIgMCAxMS43LTIxLjYgMjMuMi0zMC4yIDI5LjEtMy4zIDIuMi03LjYgNC41LTEyLjUgNC42LTQuOCAwLTkuOC0uMy0xMi44LTEuNS02LjctMi42LTEyLjgtOC42LTEyLjgtMTUuMyAwLTcuOCAxLjktMTMuNyAxMi0xOS4xek0xNzMuMiAxOTAuNmMtNi45IDMuMi0xMy4xIDUuNC0yMy4zIDUuNC0xMC4yIDAtMTMuOS0yLjUtMjMuMS0yLjUtOS4yIDAtMTMuNSAyLjYtMjMuMiAyLjYtOS44IDAtMjAuNi01LjMtMzAuOC0xNS4xLTEyLjktMTIuNi0yMy45LTMxLjctMjYuNC01MS43bDIuNC0uNmMxMS40LTEuOSA0LjQtLjMgMTcuNy0uM2gxNy43YzIuMSAwIDUuMS0uNyA3LjMgMS4yIDIgMS44IDMuMyA1LjMgNC43IDguIDUuNCAxMS41IDEzLjkgMjIuOSAyNC41IDIyLjkgMTAuNiAwIDE2LjItNi42IDI3LTYuNiAxMC44IDAgMTYuOCA2LjYgMjcuMSA2LjYgMTAuNCAwIDE3LjctMTEuNCAyMy4xLTIyLjkgMS40LTIuOCAyLjUtNi4xIDQuNi04IDItMiAxLjgtMS4yIDMuNi0xLjJoMTkuOWM3LjIgMCAxMi41LS45IDE4LjYgMS42bC44LjMuMi4xYy0zLjggMjAtMTUuOSAzOC45LTI3LjkgNTEuMi0xMS4zIDExLjEtMjAuNyAxNS42LTMwLjUgMjAuMXoiLz48L3N2Zz4=" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sign In Form -->
+            <div class="col align-items-center flex-col sign-in">
+                <div class="form-wrapper align-items-center">
+                    <div class="form sign-in">
+                        <form id="b-form" class="form" method="" action="">
+                            <h2 class="form_title title">Sign in</h2>
+                            <input class="form__input" type="text" placeholder="Email">
+                            <input class="form__input" type="password" placeholder="Password">
+                            <button class="form__button button submit">SIGN IN</button>
+                        </form>
+
+                        <p class="align-center">or use your email account</p>
+
+                        <div class="social-list align-center">
+                            <a href="#">
+                                <img src="data:image/svg+xml;base64,PHN2ZyB..." />
+                            </a>
+                            <a href="#">
+                                <img src="data:image/svg+xml;base64,PHN2ZyB..." />
+                            </a>
+                            <a href="#">
+                                <img src="data:image/svg+xml;base64,PHN2ZyB..." />
+                            </a>
+                            <a href="#">
+                                <img src="data:image/svg+xml;base64,PHN2ZyB..." />
+                            </a>
+                        </div>
+
+                        <p><b>Forgot password?</b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side Panel -->
+        <div class="row content-row">
+            <div class="col align-items-center flex-col">
+                <div class="text sign-in">
+                    <h2>Welcome</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, provident!</p>
+                </div>
+                <div class="img sign-in"></div>
+            </div>
+
+            <div class="col align-items-center flex-col">
+                <div class="img sign-up"></div>
+                <div class="text sign-up">
+                    <h2>Join with us</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, commodi?</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
