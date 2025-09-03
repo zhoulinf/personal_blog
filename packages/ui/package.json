@@ -1,0 +1,62 @@
+{
+  "name": "@person_blog/ui",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs"
+    },
+    "./es": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs"
+    },
+    "./es/*.mjs": {
+      "types": "./dist/*.d.ts",
+      "import": "./dist/*.mjs"
+    },
+    "./es/*": {
+      "types": [
+        "./dist/*.d.ts",
+        "./dist/*/index.d.ts"
+      ],
+      "import": "./dist/*.mjs"
+    },
+    "./*": "./*"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -b --force && pnpx rollup -c"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.0"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.6",
+    "@rollup/plugin-commonjs": "^28.0.6",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-terser": "^0.4.4",
+    "autoprefixer": "^10.4.0",
+    "naive-ui": "^2.42.0",
+    "postcss": "^8.4.0",
+    "rollup": "^4.50.0",
+    "rollup-plugin-esbuild": "^6.2.1",
+    "tailwindcss": "^3.4.17",
+    "typescript": "5.9.2"
+  },
+  "dependencies": {
+    "@rollup/plugin-json": "^6.1.0",
+    "@types/lodash-es": "^4.17.12",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "deepmerge": "^4.3.1",
+    "element-plus": "^2.11.1",
+    "fast-glob": "^3.3.3",
+    "lodash-es": "^4.17.21",
+    "tailwind-merge": "^3.3.1"
+  }
+}

@@ -11,12 +11,19 @@
     "check-types": "turbo run check-types"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.29.6",
     "husky": "^9.1.7",
     "turbo": "^2.5.5",
-    "typescript": "5.8.3",
+    "typescript": "5.9.2",
     "validate-commit-msg": "^2.14.0"
   },
   "packageManager": "pnpm@9.0.0",
+  "pnpm": {
+    "overrides": {
+      "vue": "3.5.18",
+      "typescript": "5.9.2"
+    }
+  },
   "engines": {
     "node": ">=22"
   },

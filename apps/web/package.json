@@ -14,9 +14,12 @@
     "@nuxt/image": "1.11.0",
     "@person_blog/eslint-config": "workspace:*",
     "@tailwindcss/vite": "^4.1.11",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "eslint": "^9.0.0",
     "nuxt": "^4.0.3",
     "octokit": "^5.0.3",
+    "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.11",
     "vue": "^3.5.18",
     "vue-router": "^4.5.1"
