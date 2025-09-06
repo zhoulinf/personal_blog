@@ -31,9 +31,6 @@
         ],
         "tsBuildInfoFile": ".build/.tsbuildinfo"
     },
-    "files": [
-        "eslint.config.ts",
-    ],
     "include": [
         "packages/**/*.ts",
         "packages/**/*.tsx",

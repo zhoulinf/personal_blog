@@ -1,7 +1,7 @@
 {
   "name": "@person_blog/eslint-config",
   "version": "1.0.0",
-  "main": "dist/index.js",
+  "main": "index.js",
   "scripts": {
     "build": "rm -rf dist && tsc --project tsconfig.build.json"
   },
@@ -14,10 +14,11 @@
     "@eslint/json": "^0.13.1",
     "@vue/eslint-config-typescript": "^14.6.0",
     "eslint": "^9.34.0",
-    "eslint-plugin-vue": "~10.3.0",
+    "eslint-plugin-vue": "~10.4.0",
     "globals": "^16.0.0",
     "jiti": "^2.4.2",
     "typescript": "5.9.2",
-    "typescript-eslint": "8.42.0"
+    "typescript-eslint": "8.42.0",
+    "vue-eslint-parser": "^10.2.0"
   }
 }

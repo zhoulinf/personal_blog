@@ -1,5 +1,6 @@
 import pluginVue from 'eslint-plugin-vue';
 import tseslint from 'typescript-eslint';
+import vueParse from 'vue-eslint-parser';
 import {vueTsConfigs} from '@vue/eslint-config-typescript';
 import globals from 'globals';
 import base from './base';
@@ -21,6 +22,7 @@ export default defineConfig([
     {
         rules,
         languageOptions: {
+            parser: vueParse,
             sourceType: 'module' as const,
             globals: {
                 ...globals.browser,
