@@ -5,16 +5,6 @@ import pluginPlaywright from 'eslint-plugin-playwright';
 import {globalIgnores} from 'eslint/config';
 
 export default defineConfigWithVueTs(
-  {
-    name: 'app/files-to-lint',
-    files: ['**/*.{ts,mts,tsx,vue}'],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.json'],
-        tsconfigRootDir: process.cwd(),
-      },
-    },
-  },
   globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**']),
   {
     ...pluginVitest.configs.recommended,
