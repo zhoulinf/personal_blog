@@ -1,16 +1,19 @@
-import { defineComponent } from "vue";
-import type {InputProps} from './input.type'
+import {defineComponent} from 'vue';
+import type {InputProps} from './input.type';
 
 export default defineComponent<InputProps>({
-    name: 'Input',
-    props:{
-        name:String,
+    name: 'BaseInput',
+    props: {
+       name: {
+      type: String,
+      default: '',
     },
-    render(){
+    },
+    render() {
         return (
             <div>
                 <input></input>
             </div>
-        )
-    }
-})
+        );
+    },
+});

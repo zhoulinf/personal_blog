@@ -1,13 +1,13 @@
-import eslint from '@eslint/js';
+import {defineConfig} from 'eslint/config';
 import globals from 'globals';
-import tseslint from 'typescript-eslint';
 import {configs} from '@person_blog/eslint-config';
 
-const config: ReturnType<typeof tseslint.config> = tseslint.config(
-  eslint.configs.recommended,
-  ...tseslint.configs.recommendedTypeChecked,
-  ...configs.ts,
-  {
+
+export default defineConfig(
+  // configs.base,
+  configs.ts,
+  [
+    {
     languageOptions: {
       globals: {
         ...globals.node,
@@ -20,12 +20,13 @@ const config: ReturnType<typeof tseslint.config> = tseslint.config(
       },
     },
   },
-  {
+   {
     rules: {
       'no-unused-vars': 'off',
       'no-undef': 'off',
+      '@typescript-eslint/init-declarations': 'off',
     },
   },
+  ],
 );
 
-export default config;

@@ -1,4 +1,4 @@
-import type { InputHTMLAttributes } from "vue";
+import type {InputHTMLAttributes} from 'vue';
 
 export interface InputProps extends InputHTMLAttributes {
     name: string
@@ -7,4 +7,4 @@ export interface InputProps extends InputHTMLAttributes {
 
 export {
 
-}
+};

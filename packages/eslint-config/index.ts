@@ -1,2 +1,2 @@
-export {configs} from './lib/index';
+export {configs, configureTypeScript} from './lib/index';
 

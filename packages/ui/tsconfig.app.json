@@ -1,0 +1,42 @@
+{
+    "compilerOptions": {
+        "composite": true,
+        "target": "ES6",
+        "lib": [
+            "ESNext",
+            "DOM"
+        ],
+        "module": "ESNext",
+        "moduleResolution": "bundler",
+        "resolveJsonModule": true,
+        "types": [
+            "vue/jsx",
+            "jest",
+            "node",
+        ],
+        "strict": true,
+        "strictNullChecks": true,
+        "noImplicitAny": true,
+        "noUnusedLocals": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "paths": {
+            "@/*": [
+                "./packages/*",
+            ]
+        },
+        "rootDirs": [
+            "demo"
+        ]
+    },
+    "files": [
+        "eslint.config.ts",
+        "vite.config.ts",
+        "env.d.ts",
+    ],
+    "include": [
+        "demo/**/*.ts",
+        "demo/**/*.tsx",
+        "demo/**/*.vue",
+    ]
+}
