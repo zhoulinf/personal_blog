@@ -3,6 +3,7 @@ import {configs} from './index';
 import globals from 'globals';
 
 export default defineConfig([
+  ...configs.base,
   ...configs.ts,
   {
     files: ['**/*.{ts,mts}'],
@@ -18,5 +19,4 @@ export default defineConfig([
       },
     },
   },
-  ...configs.base,
 ]);

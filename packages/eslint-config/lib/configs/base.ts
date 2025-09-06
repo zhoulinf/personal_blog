@@ -1,5 +1,6 @@
 import js from '@eslint/js';
 import globals from 'globals';
+import {defineConfig} from 'eslint/config';
 import type {Linter} from 'eslint';
 
 const rules:Linter.RulesRecord = {
@@ -40,10 +41,13 @@ const rules:Linter.RulesRecord = {
   'no-multi-spaces': 'error',
 };
 
-export default [
+export default defineConfig([
+  {
+    ignores: ['dist/**', 'build/**', 'node_modules/**'],
+  },
   js.configs.recommended,
   {
-    files: ['**/*.{js,mjs,cjs,ts,mts,cts,vue}'],
+    files: ['**/*.{js,mjs,cjs,ts,mts,tsx,d.ts,cts,vue}'],
     languageOptions: {
       globals: {
         ...globals.browser,
@@ -52,4 +56,4 @@ export default [
     },
     rules,
   },
-];
+]);

@@ -1,6 +1,28 @@
 
-# 开发约定
-+ 不要轻易封装组件，尤其是将组件提到所有公共可用
+# 关于项目目录
+- apps  业务相关
+    - dashboard  后台管理
+    - web 业务页面
+- packages 公共内容
+    - eslint-config 公共eslint 配置
+    - stylelint-config 公共 stylelint 配置 
+    - ui 公共基础组件
+
+- server 后端服务
+    - server-main 主服务
+
+
+
+# 项目启动
+
++ pnpm dev 启动所有服务
++ pnpm dev:web 启动web 服务
++ pnpm dev:server 启动后台服务
++ pnpm dev:ui:demo 启动ui组件的demo示例 
+
+
+
+# 项目构建
 
 
 
@@ -13,7 +35,6 @@
 + 首页
 + 分类
 + 博客阅读 + 博客评论
-12312
 
 
 实现： 使用github api 读取
@@ -36,14 +57,6 @@
 3. server 后台服务api，公共api暴露提供，内容缓存，用户管理，埋点服务等等
 
 
-
-# 项目启动
-
-
-
-
-
-# 项目构建
 
 
 

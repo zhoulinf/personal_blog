@@ -1,6 +1,6 @@
 import {configs} from '@person_blog/eslint-config';
 import pluginVitest from '@vitest/eslint-plugin';
-import {defineConfigWithVueTs, vueTsConfigs} from '@vue/eslint-config-typescript';
+import {defineConfigWithVueTs} from '@vue/eslint-config-typescript';
 import pluginPlaywright from 'eslint-plugin-playwright';
 import {globalIgnores} from 'eslint/config';
 
@@ -16,7 +16,6 @@ export default defineConfigWithVueTs(
     },
   },
   globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**']),
-  vueTsConfigs.recommended,
   {
     ...pluginVitest.configs.recommended,
     files: ['src/**/__tests__/*'],
