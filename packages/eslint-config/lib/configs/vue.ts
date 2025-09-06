@@ -8,7 +8,7 @@ import {Linter} from 'eslint';
 import {defineConfig} from 'eslint/config';
 
 
-const rules:Linter.RulesRecord = {
+const rules: Linter.RulesRecord = {
     'vue/multi-word-component-names': 'off',
 };
 
@@ -30,6 +30,12 @@ export default defineConfig([
         },
     },
     {
-        files: ['**/*.vue'], languageOptions: {parserOptions: {parser: tseslint.parser}},
+        files: ['**/*.{ts,vue,tsx}'],
+        languageOptions: {
+            parserOptions: {
+                parser: tseslint.parser,
+                
+            },
+        },
     },
 ]);

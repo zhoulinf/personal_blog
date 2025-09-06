@@ -32,7 +32,9 @@
   ],
   "scripts": {
     "build": "tsc --project tsconfig.build.json && pnpx rollup -c",
-    "dev": "vite"
+    "dev": "vite",
+    "lint:fix": "eslint . --fix",
+    "lint": "eslint ."
   },
   "peerDependencies": {
     "vue": "^3.5.0"

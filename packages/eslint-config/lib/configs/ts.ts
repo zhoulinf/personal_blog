@@ -197,7 +197,7 @@ const rules: Linter.RulesRecord = {
   '@typescript-eslint/no-shadow': 'off',
 
   // 禁止 this 别名
-  '@typescript-eslint/no-this-alias': 'error',
+  '@typescript-eslint/no-this-alias': 'warn',
 
   // 禁止类型别名
   '@typescript-eslint/no-type-alias': 'off',

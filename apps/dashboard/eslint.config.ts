@@ -21,4 +21,5 @@ export default defineConfigWithVueTs(
     files: ['e2e/**/*.{test,spec}.{js,ts,jsx,tsx}'],
   },
   ...configs.vue,
+  ...configs.ts,
 );
