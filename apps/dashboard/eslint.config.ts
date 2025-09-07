@@ -1,6 +1,6 @@
 import {configs} from '@person_blog/eslint-config';
 import pluginVitest from '@vitest/eslint-plugin';
-import {defineConfigWithVueTs} from '@vue/eslint-config-typescript';
+import {defineConfigWithVueTs, vueTsConfigs} from '@vue/eslint-config-typescript';
 import pluginPlaywright from 'eslint-plugin-playwright';
 import {globalIgnores} from 'eslint/config';
 
@@ -10,6 +10,7 @@ export default defineConfigWithVueTs(
     ...pluginVitest.configs.recommended,
     files: ['src/**/__tests__/*'],
   },
+  vueTsConfigs.recommended,
   {
     ...pluginPlaywright.configs['flat/recommended'],
     languageOptions: {

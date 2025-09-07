@@ -4,7 +4,7 @@ import {configs} from '@person_blog/eslint-config';
 
 
 export default defineConfig(
-  // configs.base,
+  configs.base,
   configs.ts,
   [
     {
