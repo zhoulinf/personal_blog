@@ -1,16 +1,18 @@
 import {configureVue, configureTypeScript} from '@person_blog/eslint-config';
 import {defineConfig} from 'eslint/config';
+import path from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {dirname} from 'node:path';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export default defineConfig(
     configureVue({
         tsconfigRootDir: __dirname,
+        project: path.join(__dirname, './tsconfig.json'),
     }),
     configureTypeScript({
         tsconfigRootDir: __dirname,
-        project: './tsconfig.json',
+        project: path.join(__dirname, './tsconfig.json'),
     }),
 );

@@ -31,7 +31,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "pnpx rimraf dist && tsc --project tsconfig.build.json && pnpx rollup -c",
+    "build": "pnpx rimraf dist && tsc --project tsconfig.build.json && rollup -c rollup.config.js",
     "dev": "vite",
     "lint:fix": "eslint . --fix",
     "lint": "eslint ."
@@ -46,6 +46,7 @@
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.4",
     "@types/lodash-es": "^4.17.12",
     "@vitejs/plugin-vue": "^6.0.1",
     "@vitejs/plugin-vue-jsx": "^5.0.1",

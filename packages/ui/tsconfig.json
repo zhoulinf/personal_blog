@@ -1,5 +1,5 @@
 {
-  "extends": "./tsconfig.base.json",
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
   "compilerOptions": {
     "jsx": "preserve",
     "jsxFactory": "h",
@@ -24,6 +24,7 @@
     "env.d.ts",
   ],
   "include": [
+    "**/*.js",
     "demo/**/*.ts",
     "demo/**/*.tsx",
     "demo/**/*.vue",

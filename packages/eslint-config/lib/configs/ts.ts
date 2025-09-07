@@ -132,7 +132,7 @@ const rules: Linter.RulesRecord = {
   '@typescript-eslint/no-empty-interface': 'warn',
 
   // 禁止空对象类型
-  '@typescript-eslint/no-empty-object-type': 'warn',
+  '@typescript-eslint/no-empty-object-type': 'off',
 
   // 禁止多余的非空断言
   '@typescript-eslint/no-extra-non-null-assertion': 'error',
@@ -330,11 +330,11 @@ const rules: Linter.RulesRecord = {
 
 export interface TypeScriptConfigOptions {
     tsconfigRootDir?: string;
-    project?: string;
+    project?: string | boolean;
 }
 
 export function configureTypeScript(options: TypeScriptConfigOptions = {}): Linter.Config[] {
-  const {tsconfigRootDir, project} = options;
+  const {tsconfigRootDir, project = true} = options;
   return [
       ...configs.recommended,
         {
@@ -347,7 +347,7 @@ export function configureTypeScript(options: TypeScriptConfigOptions = {}): Lint
                 sourceType: 'module' as const,
                 parser: parser,
                 parserOptions: {
-                    project: project ?? './tsconfig.json',
+                    project: project,
                     tsconfigRootDir: tsconfigRootDir || process.cwd(),
                 },
             },

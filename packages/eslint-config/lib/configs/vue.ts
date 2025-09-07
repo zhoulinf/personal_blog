@@ -1,6 +1,5 @@
 import pluginVue from 'eslint-plugin-vue';
 import tseslint from 'typescript-eslint';
-import vueParse from 'vue-eslint-parser';
 import globals from 'globals';
 import base from './base';
 import {Linter} from 'eslint';
@@ -9,17 +8,18 @@ import {defineConfig} from 'eslint/config';
 
 const rules: Linter.RulesRecord = {
     'vue/multi-word-component-names': 'off',
+    'vue/html-self-closing': 'off',
 };
 
 
 export interface VueConfigOptions {
     tsconfigRootDir?: string;
+    project?: string | boolean;
 }
 
-export function configureVue(options: VueConfigOptions = {}): Linter.Config[] {
-    const {tsconfigRootDir} = options;
+export function configureVue(options:VueConfigOptions = {}): Linter.Config[] {
+    const {tsconfigRootDir = './', project = true} = options;
     return [
-    ...base,
     ...pluginVue.configs['flat/base'],
     ...pluginVue.configs['flat/recommended'],
     ...pluginVue.configs['flat/essential'],
@@ -27,7 +27,6 @@ export function configureVue(options: VueConfigOptions = {}): Linter.Config[] {
     {
         rules,
         languageOptions: {
-            parser: vueParse,
             sourceType: 'module' as const,
             globals: {
                 ...globals.browser,
@@ -35,14 +34,17 @@ export function configureVue(options: VueConfigOptions = {}): Linter.Config[] {
         },
     },
     {
-        files: ['**/*.{ts,vue,tsx}'],
+        files: ['**/*.ts', '**/*.tsx', '**/*.vue'],
         languageOptions: {
             parserOptions: {
+                tsconfigRootDir,
+                project: project,
                 parser: tseslint.parser,
-                tsconfigRootDir: tsconfigRootDir,
+                extraFileExtensions: ['.vue'],
             },
         },
     },
+    ...base,
 ];
 }
 export default defineConfig(configureVue());

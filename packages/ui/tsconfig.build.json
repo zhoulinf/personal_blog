@@ -1,21 +1,38 @@
 {
-    "extends": "./tsconfig.base.json",
     "compilerOptions": {
+        "composite": true,
+        "target": "ES6",
         "jsx": "preserve",
         "jsxFactory": "h",
         "jsxFragmentFactory": "Fragment",
         "emitDeclarationOnly": true,
+        "lib": [
+            "ESNext",
+            "DOM"
+        ],
+        "module": "ESNext",
+        "moduleResolution": "bundler",
+        "resolveJsonModule": true,
         "types": [
             "vue/jsx",
-            "jest"
+            "jest",
+            "node",
         ],
+        "strict": true,
+        "strictNullChecks": true,
+        "noImplicitAny": true,
+        "noUnusedLocals": true,
         "declaration": true,
-        "rootDir": "./packages",
-        "outDir": "./dist",
+        "esModuleInterop": true,
+        "outDir": "dist",
+        "forceConsistentCasingInFileNames": true,
+        "rootDirs": [
+            "packages",
+        ]
     },
     "include": [
         "packages/**/*.ts",
-        "packages/**/*.d.ts",
         "packages/**/*.tsx",
+        "packages/**/*.d.ts",
     ]
 }
