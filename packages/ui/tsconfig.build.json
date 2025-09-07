@@ -25,14 +25,10 @@
         "declaration": true,
         "esModuleInterop": true,
         "outDir": "dist",
+        "rootDir": "src/packages",
         "forceConsistentCasingInFileNames": true,
-        "rootDirs": [
-            "packages",
-        ]
     },
     "include": [
-        "packages/**/*.ts",
-        "packages/**/*.tsx",
-        "packages/**/*.d.ts",
-    ]
+        "src/packages/**/*"
+    ],
 }

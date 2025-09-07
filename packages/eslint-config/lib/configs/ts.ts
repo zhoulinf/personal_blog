@@ -1,8 +1,6 @@
-
-
 import type {Linter} from 'eslint';
 import {parser, plugin, configs} from 'typescript-eslint';
-const rules: Linter.RulesRecord = {
+export const rules: Linter.RulesRecord = {
   // TypeScript 的 ts-expect-error 注释规则，关闭这个可以允许无警告使用 @ts-expect-error
   '@ts-expect-error': 'off',
 
@@ -326,6 +324,18 @@ const rules: Linter.RulesRecord = {
   'no-unsafe-negation': 'off',
   'no-with': 'off',
   'no-duplicate-imports': 'off',
+  '@typescript-eslint/no-extraneous-class': 'off',
+  '@typescript-eslint/no-parameter-properties': 'off',
+  '@typescript-eslint/no-unnecessary-qualifier': 'error',
+  '@typescript-eslint/no-unnecessary-type-assertion': 'error',
+  '@typescript-eslint/prefer-readonly': 'error',
+  '@typescript-eslint/prefer-regexp-exec': 'warn',
+  '@typescript-eslint/prefer-string-starts-ends-with': 'error',
+  '@typescript-eslint/restrict-plus-operands': 'warn',
+  'require-await': 'off',
+  'no-use-before-define': 'off',
+  'no-useless-constructor': 'off',
+  'dot-notation': 'off',
 };
 
 export interface TypeScriptConfigOptions {
@@ -335,19 +345,23 @@ export interface TypeScriptConfigOptions {
 
 export function configureTypeScript(options: TypeScriptConfigOptions = {}): Linter.Config[] {
   const {tsconfigRootDir, project = true} = options;
+  const files = ['**/*.ts', '**/*.tsx', '**/*.mts', '**/*.mtsx', '**/*.cts', '**/*.ctsx']
   return [
-      ...configs.recommended,
+        ...configs.recommended,
         {
-            files: ['**/*.ts', '**/*.tsx', '**/*.mts', '**/*.mtsx', '**/*.cts', '**/*.ctsx'],
+            files,
             rules,
             plugins: {
                 '@typescript-eslint': plugin,
             },
             languageOptions: {
-                sourceType: 'module' as const,
-                parser: parser,
+                sourceType: 'module',
                 parserOptions: {
                     project: project,
+                    ecmaFeatures: {
+                      jsx: true,
+                    },
+                    parser: parser,
                     tsconfigRootDir: tsconfigRootDir || process.cwd(),
                 },
             },

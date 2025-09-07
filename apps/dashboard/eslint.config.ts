@@ -8,9 +8,7 @@ import {dirname} from 'node:path';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-console.log(__dirname);
-
-export default defineConfigWithVueTs(
+const config = defineConfigWithVueTs(
   globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**']),
   configureVue({
     tsconfigRootDir: __dirname,
@@ -34,3 +32,4 @@ export default defineConfigWithVueTs(
     files: ['e2e/**/*.{test,spec}.{js,ts,jsx,tsx}'],
   },
 );
+export default config;

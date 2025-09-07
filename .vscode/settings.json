@@ -59,6 +59,7 @@
   "[html]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
+  "vetur.validation.template": false,
   "files.eol": "\n",
   "files.autoSave": "afterDelay",
   "editor.formatOnSave": true,

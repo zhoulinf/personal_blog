@@ -1,50 +1,55 @@
 import pluginVue from 'eslint-plugin-vue';
 import tseslint from 'typescript-eslint';
 import globals from 'globals';
+import vueParse from 'vue-eslint-parser';
 import base from './base';
 import {Linter} from 'eslint';
 import {defineConfig} from 'eslint/config';
-
+import {rules as tsRules} from './ts';
 
 const rules: Linter.RulesRecord = {
     'vue/multi-word-component-names': 'off',
     'vue/html-self-closing': 'off',
+    ...tsRules,
 };
-
 
 export interface VueConfigOptions {
     tsconfigRootDir?: string;
-    project?: string | boolean;
+    project?: string |string [] | boolean;
 }
 
 export function configureVue(options:VueConfigOptions = {}): Linter.Config[] {
-    const {tsconfigRootDir = './', project = true} = options;
+    const {tsconfigRootDir = './', project = ['./tsconfig.json']} = options;
+    const files = ['**/*.ts', '**/*.tsx', '**/*.vue']
+
     return [
-    ...pluginVue.configs['flat/base'],
-    ...pluginVue.configs['flat/recommended'],
-    ...pluginVue.configs['flat/essential'],
-    ...pluginVue.configs['flat/strongly-recommended'],
-    {
-        rules,
-        languageOptions: {
-            sourceType: 'module' as const,
-            globals: {
-                ...globals.browser,
+        ...tseslint.configs.recommended,
+        ...pluginVue.configs['flat/essential'],
+        ...pluginVue.configs['flat/strongly-recommended'],
+        {
+            files,
+            plugins: {
+                '@typescript-eslint': tseslint.plugin,
             },
-        },
-    },
-    {
-        files: ['**/*.ts', '**/*.tsx', '**/*.vue'],
-        languageOptions: {
-            parserOptions: {
-                tsconfigRootDir,
-                project: project,
-                parser: tseslint.parser,
-                extraFileExtensions: ['.vue'],
+            languageOptions: {
+                ecmaVersion: 'latest',
+                globals: globals.browser,
+                parser: vueParse,
+                parserOptions: {
+                    sourceType: 'module',
+                    'parser': {
+                        '<template>': 'espree',
+                        'ts': '@typescript-eslint/parser',
+                    },
+                    tsconfigRootDir,
+                    project: project,
+                    extraFileExtensions: ['.vue'],
+                },
             },
+            rules,
         },
-    },
-    ...base,
-];
+        ...base,
+    ];
 }
+
 export default defineConfig(configureVue());

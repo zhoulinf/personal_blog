@@ -6,13 +6,13 @@ import {fileURLToPath} from 'node:url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-export default defineConfig(
-    configureVue({
-        tsconfigRootDir: __dirname,
-        project: path.join(__dirname, './tsconfig.json'),
+export default defineConfig([
+    ...configureVue({
+      tsconfigRootDir: __dirname,
+      project: './tsconfig.json',
     }),
-    configureTypeScript({
-        tsconfigRootDir: __dirname,
-        project: path.join(__dirname, './tsconfig.json'),
+    ...configureTypeScript({
+      tsconfigRootDir: __dirname,
+      project: './tsconfig.json',
     }),
-);
+]);

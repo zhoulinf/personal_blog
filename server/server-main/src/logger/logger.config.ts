@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
+
 // src/common/logger/winston.config.ts
 import * as winston from 'winston';
 import * as DailyRotateFile from 'winston-daily-rotate-file';
@@ -10,7 +10,6 @@ const logDir = path.join(__dirname, '../../logs');
 const customFormat = winston.format.printf(({timestamp, level, message, context}) => {
   console.log(message);
   const msg = typeof message === 'string' ? message : JSON.stringify(message);
-  // eslint-disable-next-line @typescript-eslint/no-base-to-string
   return `${timestamp} [${level}]${context ? ` [${context}]` : ''}: ${msg}`;
 });
 
