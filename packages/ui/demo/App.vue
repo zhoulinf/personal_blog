@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {BaseInput} from '@/input';
+import {BaseInput} from '../dist/packages';
 </script>
 
 <template>
