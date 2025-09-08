@@ -8,7 +8,7 @@ import {ApiOperation, ApiParam, ApiTags} from '@nestjs/swagger';
 @Controller('role')
 export class RoleController {
 
-  constructor(private roleService: RoleService) { }
+  constructor(private readonly roleService: RoleService) { }
 
 
   @Get(':roleId')

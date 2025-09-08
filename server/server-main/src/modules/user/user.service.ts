@@ -10,7 +10,7 @@ export class UserService {
   @Inject(LOGGER_TOKEN)
   private readonly logger: LoggerService;
 
-  constructor(@InjectRepository(User) private usersRepository: Repository<User>) { }
+  constructor(@InjectRepository(User) private readonly usersRepository: Repository<User>) { }
 
   findByName(username: string) {
     return this.usersRepository.findOneBy({username});

@@ -1,15 +1,26 @@
-import {configs} from '@person_blog/eslint-config';
+import {configureTypeScript, configureVue} from '@person_blog/eslint-config';
 import pluginVitest from '@vitest/eslint-plugin';
-import {defineConfigWithVueTs} from '@vue/eslint-config-typescript';
+import {defineConfigWithVueTs, vueTsConfigs} from '@vue/eslint-config-typescript';
 import pluginPlaywright from 'eslint-plugin-playwright';
 import {globalIgnores} from 'eslint/config';
+import {fileURLToPath} from 'node:url';
+import {dirname} from 'node:path';
 
-export default defineConfigWithVueTs(
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+const config = defineConfigWithVueTs(
   globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**']),
+  configureTypeScript({
+    tsconfigRootDir: __dirname,
+  }),
+  configureVue({
+    tsconfigRootDir: __dirname,
+  }),
   {
     ...pluginVitest.configs.recommended,
     files: ['src/**/__tests__/*'],
   },
+  vueTsConfigs.recommended,
   {
     ...pluginPlaywright.configs['flat/recommended'],
     languageOptions: {
@@ -20,5 +31,5 @@ export default defineConfigWithVueTs(
     },
     files: ['e2e/**/*.{test,spec}.{js,ts,jsx,tsx}'],
   },
-  ...configs.vue,
 );
+export default config;

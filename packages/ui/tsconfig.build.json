@@ -25,14 +25,10 @@
         "declaration": true,
         "esModuleInterop": true,
         "outDir": "dist",
+        "rootDir": "src/packages",
         "forceConsistentCasingInFileNames": true,
-        "rootDirs": [
-            "packages",
-        ],
-        "tsBuildInfoFile": ".build/.tsbuildinfo"
     },
     "include": [
-        "packages/**/*.ts",
-        "packages/**/*.tsx",
-    ]
+        "src/packages/**/*"
+    ],
 }

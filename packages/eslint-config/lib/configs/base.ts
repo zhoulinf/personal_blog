@@ -41,13 +41,15 @@ const rules:Linter.RulesRecord = {
   'no-multi-spaces': 'error',
 };
 
+const files = ['**/*.js', '**/*.mjs', '**/*.cjs', '**/*.mts', '**/*.tsx', '**/*.vue']
+
 export default defineConfig([
   {
     ignores: ['dist/**', 'build/**', 'node_modules/**'],
   },
   js.configs.recommended,
   {
-    files: ['**/*.{js,mjs,cjs,ts,mts,tsx,d.ts,cts,vue}'],
+    files: files,
     languageOptions: {
       globals: {
         ...globals.browser,

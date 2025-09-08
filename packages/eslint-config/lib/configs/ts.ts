@@ -1,8 +1,7 @@
-
-
 import type {Linter} from 'eslint';
+import espree from 'espree'
 import {parser, plugin, configs} from 'typescript-eslint';
-const rules: Linter.RulesRecord = {
+export const rules: Linter.RulesRecord = {
   // TypeScript 的 ts-expect-error 注释规则，关闭这个可以允许无警告使用 @ts-expect-error
   '@ts-expect-error': 'off',
 
@@ -132,7 +131,7 @@ const rules: Linter.RulesRecord = {
   '@typescript-eslint/no-empty-interface': 'warn',
 
   // 禁止空对象类型
-  '@typescript-eslint/no-empty-object-type': 'warn',
+  '@typescript-eslint/no-empty-object-type': 'off',
 
   // 禁止多余的非空断言
   '@typescript-eslint/no-extra-non-null-assertion': 'error',
@@ -197,7 +196,7 @@ const rules: Linter.RulesRecord = {
   '@typescript-eslint/no-shadow': 'off',
 
   // 禁止 this 别名
-  '@typescript-eslint/no-this-alias': 'error',
+  '@typescript-eslint/no-this-alias': 'warn',
 
   // 禁止类型别名
   '@typescript-eslint/no-type-alias': 'off',
@@ -326,32 +325,55 @@ const rules: Linter.RulesRecord = {
   'no-unsafe-negation': 'off',
   'no-with': 'off',
   'no-duplicate-imports': 'off',
+  '@typescript-eslint/no-extraneous-class': 'off',
+  '@typescript-eslint/no-parameter-properties': 'off',
+  '@typescript-eslint/no-unnecessary-qualifier': 'error',
+  '@typescript-eslint/no-unnecessary-type-assertion': 'error',
+  '@typescript-eslint/prefer-readonly': 'error',
+  '@typescript-eslint/prefer-regexp-exec': 'warn',
+  '@typescript-eslint/prefer-string-starts-ends-with': 'error',
+  '@typescript-eslint/restrict-plus-operands': 'warn',
+  'require-await': 'off',
+  'no-use-before-define': 'off',
+  'no-useless-constructor': 'off',
+  'dot-notation': 'off',
 };
 
 export interface TypeScriptConfigOptions {
     tsconfigRootDir?: string;
-    project?: string;
+    project?: string | string[] | boolean;
 }
 
 export function configureTypeScript(options: TypeScriptConfigOptions = {}): Linter.Config[] {
-  const {tsconfigRootDir, project} = options;
+  const {tsconfigRootDir, project = true} = options;
+  const files = ['**/*.ts', '**/*.tsx', '**/*.mts', '**/*.mtsx', '**/*.cts', '**/*.ctsx']
   return [
-      ...configs.recommended,
+        ...configs.recommended,
         {
-            files: ['**/*.ts', '**/*.tsx', '**/*.mts', '**/*.mtsx', '**/*.cts', '**/*.ctsx'],
+          files: ["**/*.js", "**/*.cjs", "**/*.mjs"],
+          languageOptions: {
+            parser: espree,
+            ecmaVersion: "latest",
+            sourceType: "module",
+          },
+        },
+        {
+            files,
             rules,
             plugins: {
                 '@typescript-eslint': plugin,
             },
             languageOptions: {
-                sourceType: 'module' as const,
-                parser: parser,
+                sourceType: 'module',
                 parserOptions: {
-                    project: project ?? './tsconfig.json',
+                    project: project,
+                    ecmaFeatures: {
+                      jsx: true,
+                    },
+                    parser: parser,
                     tsconfigRootDir: tsconfigRootDir || process.cwd(),
                 },
             },
-
         },
     ];
 };

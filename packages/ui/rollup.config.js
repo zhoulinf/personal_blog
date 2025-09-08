@@ -1,4 +1,3 @@
-
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import nodeResolve from '@rollup/plugin-node-resolve';
@@ -13,7 +12,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const baseConfig = defineConfig({
-    input: './packages/index.ts',
+    input: './src/packages/index.ts',
     plugins: [
         nodeResolve(
             {extensions: ['.js', '.ts', '.tsx']},
@@ -37,7 +36,7 @@ const esmConfig = defineConfig({
         sourcemap: true,
         // 保留源文件目录结构
         preserveModules: true,
-        preserveModulesRoot: 'src',
+        preserveModulesRoot: 'src/packages',
     },
 });
 

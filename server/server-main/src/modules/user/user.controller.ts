@@ -6,7 +6,7 @@ import {plainToInstance} from 'class-transformer';
 
 @Controller('user')
 export class UserController {
-  constructor(private userService: UserService) { }
+  constructor(private readonly userService: UserService) { }
 
   @Post('add')
   add(@Body() user: UserDto) {

@@ -1,10 +1,47 @@
 {
-  "references": [
-    {
-      "path": "./tsconfig.app.json"
-    },
-    {
-      "path": "./tsconfig.build.json"
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "compilerOptions": {
+    "composite": true,
+    "target": "ES6",
+    "jsx": "preserve",
+    "jsxFactory": "h",
+    "jsxImportSource": "vue",
+    "jsxFragmentFactory": "Fragment",
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": [
+      "vue/jsx",
+      "node",
+    ],
+    "paths": {
+      "@/*": [
+        "./src/packages/*",
+      ]
     }
+  },
+  "files": [
+    "vite.config.ts",
+    "eslint.config.mts",
+    "env.d.ts",
+  ],
+  "include": [
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    "./src/**/*.vue"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
   ]
 }
