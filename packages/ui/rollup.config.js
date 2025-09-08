@@ -1,5 +1,6 @@
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
+import postcss from 'rollup-plugin-postcss';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import terser from '@rollup/plugin-terser';
@@ -22,6 +23,7 @@ const baseConfig = defineConfig({
             target: 'esnext',
             sourceMap: true,
         }),
+        postcss(),
         commonjs(),
         terser(),
     ],
@@ -36,7 +38,7 @@ const esmConfig = defineConfig({
         sourcemap: true,
         // 保留源文件目录结构
         preserveModules: true,
-        preserveModulesRoot: '/packages',
+        preserveModulesRoot: './',
     },
 });
 

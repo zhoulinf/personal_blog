@@ -5,7 +5,7 @@
     "target": "ES6",
     "jsx": "preserve",
     "jsxFactory": "h",
-    "jsxImportSource": "vue",
+    // "jsxImportSource": "vue",
     "jsxFragmentFactory": "Fragment",
     "lib": [
       "ESNext",
