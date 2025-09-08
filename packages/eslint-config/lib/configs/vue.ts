@@ -20,7 +20,7 @@ export interface VueConfigOptions {
 
 export function configureVue(options:VueConfigOptions = {}): Linter.Config[] {
     const {tsconfigRootDir = './', project = ['./tsconfig.json']} = options;
-    const files = ['**/*.ts', '**/*.tsx', '**/*.vue']
+    const files = ['**/*.ts', '**/*.tsx', '**/*.vue'];
 
     return [
         ...pluginVue.configs['flat/essential'],
