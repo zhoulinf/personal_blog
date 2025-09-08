@@ -1,4 +1,5 @@
 import type {Linter} from 'eslint';
+import espree from 'espree'
 import {parser, plugin, configs} from 'typescript-eslint';
 export const rules: Linter.RulesRecord = {
   // TypeScript 的 ts-expect-error 注释规则，关闭这个可以允许无警告使用 @ts-expect-error
@@ -340,7 +341,7 @@ export const rules: Linter.RulesRecord = {
 
 export interface TypeScriptConfigOptions {
     tsconfigRootDir?: string;
-    project?: string | boolean;
+    project?: string | string[] | boolean;
 }
 
 export function configureTypeScript(options: TypeScriptConfigOptions = {}): Linter.Config[] {
@@ -348,6 +349,14 @@ export function configureTypeScript(options: TypeScriptConfigOptions = {}): Lint
   const files = ['**/*.ts', '**/*.tsx', '**/*.mts', '**/*.mtsx', '**/*.cts', '**/*.ctsx']
   return [
         ...configs.recommended,
+        {
+          files: ["**/*.js", "**/*.cjs", "**/*.mjs"],
+          languageOptions: {
+            parser: espree,
+            ecmaVersion: "latest",
+            sourceType: "module",
+          },
+        },
         {
             files,
             rules,
@@ -365,7 +374,6 @@ export function configureTypeScript(options: TypeScriptConfigOptions = {}): Lint
                     tsconfigRootDir: tsconfigRootDir || process.cwd(),
                 },
             },
-
         },
     ];
 };

@@ -23,7 +23,6 @@ export function configureVue(options:VueConfigOptions = {}): Linter.Config[] {
     const files = ['**/*.ts', '**/*.tsx', '**/*.vue']
 
     return [
-        ...tseslint.configs.recommended,
         ...pluginVue.configs['flat/essential'],
         ...pluginVue.configs['flat/strongly-recommended'],
         {

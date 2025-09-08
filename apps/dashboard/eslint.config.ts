@@ -10,10 +10,10 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const config = defineConfigWithVueTs(
   globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**']),
-  configureVue({
+  configureTypeScript({
     tsconfigRootDir: __dirname,
   }),
-  configureTypeScript({
+  configureVue({
     tsconfigRootDir: __dirname,
   }),
   {

@@ -7,11 +7,11 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default defineConfig([
-    ...configureVue({
+    ...configureTypeScript({
       tsconfigRootDir: __dirname,
       project: './tsconfig.json',
     }),
-    ...configureTypeScript({
+    ...configureVue({
       tsconfigRootDir: __dirname,
       project: './tsconfig.json',
     }),
