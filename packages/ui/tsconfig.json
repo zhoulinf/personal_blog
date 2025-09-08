@@ -24,9 +24,13 @@
       "vue/jsx",
       "node",
     ],
+    "rootDirs": [
+      "demo",
+      "packages"
+    ],
     "paths": {
       "@/*": [
-        "./src/packages/*",
+        "./packages/*",
       ]
     }
   },
@@ -36,9 +40,11 @@
     "env.d.ts",
   ],
   "include": [
-    "./src/**/*.ts",
-    "./src/**/*.tsx",
-    "./src/**/*.vue"
+    "./packages/**/*.ts",
+    "./packages/**/*.tsx",
+    "./demo/**/*.vue",
+    "./demo/**/*.ts",
+    "./demo/**/*.tsx",
   ],
   "exclude": [
     "node_modules",

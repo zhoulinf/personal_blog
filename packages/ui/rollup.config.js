@@ -12,7 +12,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const baseConfig = defineConfig({
-    input: './src/packages/index.ts',
+    input: 'packages/index.ts',
     plugins: [
         nodeResolve(
             {extensions: ['.js', '.ts', '.tsx']},
