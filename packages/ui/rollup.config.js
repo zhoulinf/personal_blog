@@ -12,7 +12,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const baseConfig = defineConfig({
-    input: './src/packages/index.ts',
+    input: 'packages/index.ts',
     plugins: [
         nodeResolve(
             {extensions: ['.js', '.ts', '.tsx']},
@@ -36,7 +36,7 @@ const esmConfig = defineConfig({
         sourcemap: true,
         // 保留源文件目录结构
         preserveModules: true,
-        preserveModulesRoot: 'src/packages',
+        preserveModulesRoot: '/packages',
     },
 });
 
