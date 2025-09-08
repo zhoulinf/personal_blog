@@ -36,7 +36,7 @@ const esmConfig = defineConfig({
         sourcemap: true,
         // 保留源文件目录结构
         preserveModules: true,
-        preserveModulesRoot: 'src/packages',
+        preserveModulesRoot: '/packages',
     },
 });
 
