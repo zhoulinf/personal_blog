@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import '../dist/index.css';
 import {BaseInput} from '../dist/packages';
 </script>
 

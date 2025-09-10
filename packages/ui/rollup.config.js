@@ -6,8 +6,8 @@ import commonjs from '@rollup/plugin-commonjs';
 import terser from '@rollup/plugin-terser';
 import esbuild from 'rollup-plugin-esbuild';
 import {defineConfig} from 'rollup';
-
 import deepmerge from 'deepmerge';
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -23,8 +23,10 @@ const baseConfig = defineConfig({
             target: 'esnext',
             sourceMap: true,
         }),
-        postcss(),
         commonjs(),
+        postcss({
+           extract: true,
+        }),
         terser(),
     ],
     external: ['vue'],
