@@ -5,6 +5,7 @@ import nodeResolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import terser from '@rollup/plugin-terser';
 import esbuild from 'rollup-plugin-esbuild';
+import vueJsx from '@vitejs/plugin-vue-jsx';
 import {defineConfig} from 'rollup';
 import deepmerge from 'deepmerge';
 
@@ -18,12 +19,19 @@ const baseConfig = defineConfig({
         nodeResolve(
             {extensions: ['.js', '.ts', '.tsx']},
         ),
+        commonjs(),
         esbuild({
             tsconfig: path.resolve(__dirname, 'tsconfig.build.json'),
             target: 'esnext',
+            include: /\.[jt]s$/, // 只处理 ts/js，不要管 tsx,
+            exclude: /\.tsx$/, // 避免跟 vueJsx 重复
             sourceMap: true,
         }),
-        commonjs(),
+        vueJsx({
+            transformOn: true,
+            mergeProps: true,
+            include: /\.tsx$/, // 专门处理 tsx
+        }),
         postcss({
            extract: true,
         }),
