@@ -1,12 +1,17 @@
 <script setup lang="ts">
-import '../dist/index.css';
-import {BaseInput} from '../dist/packages';
+import {BaseInput} from '@/input';
+import {BaseButton} from '@/button/src/button';
 </script>
 
 <template>
   <div class="w-full h-full">
-    123
-    <BaseInput name="string"></BaseInput>
+    <BaseInput></BaseInput>
+    <BaseButton
+      type="primary"
+      size="middle"
+    >
+      内容
+    </BaseButton>
   </div>
 </template>
 

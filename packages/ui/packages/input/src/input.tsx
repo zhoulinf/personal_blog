@@ -1,14 +1,18 @@
-import {defineComponent} from 'vue';
-import type {InputProps} from './input.type';
+import {defineComponent, type ExtractPropTypes} from 'vue';
 
-export default defineComponent<InputProps>({
-  name: 'BaseInput',
-  props: {
-    name: {
-        type: String,
-        default: '',
-    },
+const inputProps = {
+  name: {
+    type: String,
+    default: '',
   },
+};
+
+
+export type InputProps = ExtractPropTypes<typeof inputProps>
+
+export default defineComponent({
+  name: 'BaseInput',
+  props: inputProps,
   render() {
     return (
       <div>
